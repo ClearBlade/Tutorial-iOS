@@ -9,11 +9,11 @@
 #import "ViewController.h"
 #import <Foundation/Foundation.h>
 
-NSString *SystemKey = @"9a83c2de0ad4de9fddab90fe9c7a";
-NSString *SystemSec = @"9A83C2DE0A9CE1B3F7A2A6E0C72C";
-NSString *collectionId = @"9cb0c2de0aa2edc983fbecec8e8e01";
-NSString *platformURL = @"https://rtp.clearblade.com";
-NSString *messagingURL = @"rtp.clearblade.com";
+NSString *SystemKey = @"YOUR_SYSTEM_KEY";
+NSString *SystemSec = @"YOUR_SYSTEM_SECRET";
+NSString *collectionId = @"YOUR_COLLECTION_ID";
+NSString *platformURL = @"YOUR_PLATFORM_URL";
+NSString *messagingURL = @"YOUR_MESSAGING_HOST";
 NSString *userEmail = @"test@clearblade.com";
 NSString *userPassword = @"clearblade";
 
