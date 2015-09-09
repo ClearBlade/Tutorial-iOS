@@ -38,8 +38,13 @@
 
 -(void) fetchWithSuccessCallback:(CBQuerySuccessCallback)successCallback
                withErrorCallback:(CBQueryErrorCallback)failureCallback {
-    [[CBQuery queryWithCollectionID:self.collectionID] fetchWithSuccessCallback:successCallback
-                                                              withErrorCallback:failureCallback];
+    if (self.collectionName != nil) {
+        [[CBQuery queryWithCollectionName:self.collectionName] fetchWithSuccessCallback:successCallback
+                                                                  withErrorCallback:failureCallback];
+    } else {
+        [[CBQuery queryWithCollectionID:self.collectionID] fetchWithSuccessCallback:successCallback
+                                                                  withErrorCallback:failureCallback];
+    }
 }
 
 -(void) fetchWithQuery:(CBQuery *) query

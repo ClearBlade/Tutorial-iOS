@@ -145,7 +145,8 @@ NSString *userPassword = @"clearblade";
 -(void) doPart3 {
     NSLog(@"In doPart3");
     // Fetch data from collection
-    CBQuery *weatherQuery = [CBQuery queryWithCollectionID:collectionId];
+    //CBQuery *weatherQuery = [CBQuery queryWithCollectionID:collectionId];
+    CBQuery *weatherQuery = [CBQuery queryWithCollectionName:@"Weather"];
     [weatherQuery fetchWithSuccessCallback:^(CBQueryResponse *response) {
         NSMutableArray *found = response.dataItems;
         NSLog(@"FETCH GOT: %@", found);
@@ -380,12 +381,12 @@ NSString *userPassword = @"clearblade";
 
 -(IBAction) subscribePressed:(id)sender {
     NSLog(@"Trying to subscribe");
-    [self.messageClient subscribeToTopic:@"/Weather"];
+    [self.messageClient subscribeToTopic:@"/weather"];
 }
 
 -(IBAction) publishPressed:(id)sender {
     NSString *msg = self.publishString.text;
-    [self.messageClient publishMessage:msg toTopic:@"/Weather"];
+    [self.messageClient publishMessage:msg toTopic:@"/weather"];
 }
 
 -(void) callTheDangSelector:(SEL)tutorialStep {
